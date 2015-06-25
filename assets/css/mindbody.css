@@ -385,18 +385,29 @@ article .stats td.name span {
   font-weight: bolder;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
+.modal .modal-body form legend {
+  font-size: 100%;
+  color: #333;
+  font-weight: bolder;
+}
 .modal .modal-body form .submit .button {
   background: #9ac084;
   border: 1px solid #91b57c;
   color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+  padding: 0.5em 1em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  font-size: 18px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  font-weight: bolder;
-  padding: 0.5em 1em;
+}
+.modal .modal-body form .submit .button:hover,
+.modal .modal-body form .submit .button:active,
+.modal .modal-body form .submit .button:focus {
+  background: #b6d1a6;
+  outline: 0;
 }

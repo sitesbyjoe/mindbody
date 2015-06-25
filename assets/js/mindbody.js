@@ -32,21 +32,15 @@ mindBody.controller('mindBody', function($scope, programFactory, pricesFactory) 
 	
 	// this gets our programs
 	$scope.getPrograms = function() {
-		
 		pricesFactory.getPrices().then(function(prices) {
-		
 			$scope.prices = prices.data;
-			
 			programFactory.getPrograms().then(function(programs) {
-				
 				$scope.allPrograms = programs.data;
-				
 				// add the first 3 to the cards
 				for (var i = 0; i < 3; i++) {
 					$scope.programs.push($scope.allPrograms[i]);
 					$scope.programs[i].prices = [];
 				}
-				
 				// add the prices to the programs
 				for (var j=0; j<$scope.prices.length; j++) {
 					for (i = 0; i < $scope.programs.length; i++) {
@@ -55,7 +49,6 @@ mindBody.controller('mindBody', function($scope, programFactory, pricesFactory) 
 						}
 					}
 				}
-				
 			});
 		});
 	};
@@ -67,8 +60,27 @@ mindBody.controller('mindBody', function($scope, programFactory, pricesFactory) 
 	
 	// update the image path based on our price item
 	$scope.getSparklineImage = function(int) {
-			var path = 'assets/images/sparkline-' + int + '.png';
-			return path;
+		var path = 'assets/images/sparkline-' + int + '.png';
+		return path;
+	};
+	
+	// handling the less/more data view
+	$scope.toggleExtraSales = function(program) {
+		console.log(program.ProgramID);
+		var section = $('.more-data[data-id="' + program.ProgramID + '"]');
+		var link = $('.more.less[data-id="' + program.ProgramID + '"]');
+		console.log(section);
+		if (section.hasClass('hidden')) {
+			section.removeClass('animated fadeOut').removeClass('hidden').addClass('animated fadeIn');
+			link.text('less');
+		} else {
+			section.removeClass('animated fadeIn').addClass('animated fadeOut');
+			setTimeout(function() {
+				section.addClass('hidden');
+				link.text('more');
+			}, 500);
+		}
+		
 	};
 
 	// initialization

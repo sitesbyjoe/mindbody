@@ -373,17 +373,28 @@ article {
 	
 	.modal-body {
 		form {
+			legend {
+				font-size: 100%;
+				color: #333;
+				font-weight: bolder;
+			}
+			
 			.submit {
 				.button {
 					background: #9ac084;
 					border: 1px solid #91b57c;
 					color: #fff;
 					box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-					.round(3px);
 					font-size: 18px;
 					text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
 					font-weight: bolder;
-					padding: 0.5em 1em
+					padding: 0.5em 1em;
+					.round(3px);
+				}
+				
+				.button:hover, .button:active, .button:focus {
+					background: lighten(#9ac084, 10%);
+					outline: 0;
 				}
 			}
 		}
