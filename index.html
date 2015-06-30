@@ -91,7 +91,7 @@
 									</div>
 								</div>
 							</section>
-							<section class="more-data hidden">
+							<section class="more-data hidden" data-id="{{program.ProgramID}}">
 								<table class="price-details">
 									<thead>
 										<tr>
@@ -111,7 +111,7 @@
 									</tbody>
 								</table>
 							</section>
-							<a href="#" class="more less">more</a>
+							<a href="#" class="more less" data-id="{{program.ProgramID}}" ng-click="toggleExtraSales(program)">more</a>
 						</div>
 					</div>
 					
