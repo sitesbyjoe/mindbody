@@ -66,7 +66,6 @@ mindBody.controller('mindBody', function($scope, programFactory, pricesFactory) 
 	
 	// handling the less/more data view
 	$scope.toggleExtraSales = function(program) {
-		console.log(program.ProgramID);
 		var section = $('.more-data[data-id="' + program.ProgramID + '"]');
 		var link = $('.more.less[data-id="' + program.ProgramID + '"]');
 		console.log(section);
